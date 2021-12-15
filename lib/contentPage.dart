@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:ndmais/post_model.dart';
-import 'contentList.dart';
 
 class MyContentPage extends StatefulWidget {
   MyContentPage({Key? key, required this.post}) : super(key: key);
@@ -18,32 +18,31 @@ class _MyHomePageState extends State<MyContentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(post.title.rendered)
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Expanded(
-              child: Image.network(
-                post.image,
-                fit: BoxFit.fitHeight,
-                height: 200,
-                width: 200,
-              ),
+      appBar: AppBar(title: Text(post.date)),
+      body: Container(
+          child: SingleChildScrollView(
+        child: Column(children: [
+          Container(
+              child: Stack(children: [
+            Container(
+                child: Image.network(
+              post.image,
+              fit: BoxFit.fitWidth,
+            )),
+            Container(
+              child: Text(post.title.rendered,
+                  style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
+                    Shadow(
+                      blurRadius: 5.0,
+                      color: Colors.black,
+                      offset: Offset(2.0, 2.0),
+                    ),
+                  ])),
             ),
-          ),
-          Expanded(
-              flex: 2,
-              child: Text(post.title.rendered, style: TextStyle(fontSize: 20))
-          ),
-          Expanded(
-              flex: 6,
-              child: Text(post.title.rendered, style: TextStyle(fontSize: 20))
-          ),
-        ],
-      ),
+          ])),
+          Container(child: Html(data: post.content.rendered)),
+        ]),
+      )),
     );
   }
 }
