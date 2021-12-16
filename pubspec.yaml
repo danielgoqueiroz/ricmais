@@ -34,6 +34,7 @@ dependencies:
   link_preview_generator: ^1.2.0
   paulonia_cache_image: ^0.5.0
   flutter_html: ^2.2.1
+  youtube_player_flutter: ^8.0.0
 
 dev_dependencies:
   flutter_test:
