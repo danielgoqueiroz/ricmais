@@ -33,7 +33,9 @@ class ContentList extends StatelessWidget {
                     ? 0
                     : jsonDecode(snapshot.data).length,
                 itemBuilder: (BuildContext context, int index) {
-                  Post post = Post.fromJson(jsonDecode(snapshot.data)[index]);
+                  var jsonArray = jsonDecode(snapshot.data);
+                  var jsonObject = jsonArray[index];
+                  Post post = Post.fromJson(jsonObject);
                   return ListTile(
                     onTap: () {
                       Navigator.push(

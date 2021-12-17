@@ -20,7 +20,7 @@ class Post {
         json['date'],
         Content.fromJson(json['excerpt']) ?? Content(''),
         json['link'],
-        json['_embedded']['wp:featuredmedia'][0]['source_url'] ?? '',
+        json['_embedded']['wp:featuredmedia']?[0]['source_url'] ?? '',
         Content.fromJson(json['title']) ?? Content(''),
         Content.fromJson(json['content']) ?? Content(''));
   }

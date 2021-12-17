@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
 import 'package:ndmais/post_model.dart';
@@ -136,28 +135,30 @@ class _MyHomePageState extends State<MyContentPage> {
         String link = imgElement.attributes['src']!;
         String description = element.getElementsByTagName('span')[0].text;
         if (link != null) {
-          widgets.add(Stack(children: [
-            Image.network(
-              link,
-              fit: BoxFit.fitWidth,
-            ),
-            Positioned(
-              bottom: 0,
-              width: MediaQuery.of(context).size.width,
-              child: Text(description,
-                  style: TextStyle(
-                      backgroundColor: Colors.black.withOpacity(0.3),
-                      fontSize: 12,
-                      color: Colors.white,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 1.0,
-                          color: Colors.black,
-                          offset: Offset(1.0, 1.0),
-                        ),
-                      ])),
-            )
-          ]));
+          widgets.add(Container(
+            child: Stack(children: [
+              Image.network(
+                link,
+                fit: BoxFit.fitWidth,
+              ),
+              Positioned(
+                bottom: 0,
+                width: MediaQuery.of(context).size.width,
+                child: Text(description,
+                    style: TextStyle(
+                        backgroundColor: Colors.black.withOpacity(0.4),
+                        fontSize: 12,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 1.0,
+                            color: Colors.black,
+                            offset: Offset(1.0, 1.0),
+                          ),
+                        ])),
+              )
+            ]),
+          ));
         }
       });
     }
