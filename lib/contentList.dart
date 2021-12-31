@@ -29,13 +29,20 @@ class ContentList extends StatelessWidget {
           future: getPosts(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             return ListView.builder(
+                scrollDirection: Axis.vertical,
                 itemCount: snapshot.data == null
                     ? 0
                     : jsonDecode(snapshot.data).length,
                 itemBuilder: (BuildContext context, int index) {
                   var jsonArray = jsonDecode(snapshot.data);
                   var jsonObject = jsonArray[index];
+
                   Post post = Post.fromJson(jsonObject);
+                  var image = Image.network(
+                    post.image,
+                    fit: BoxFit.cover,
+                  );
+
                   return ListTile(
                     onTap: () {
                       Navigator.push(
@@ -43,13 +50,14 @@ class ContentList extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => MyContentPage(post: post)));
                     },
+                    trailing: const Icon(Icons.arrow_forward_ios),
+
                     leading: Container(
-                        width: 80,
-                        height: 80,
-                        child: Image.network(
-                          post.image,
-                          fit: BoxFit.fitWidth,
-                        )),
+                          margin: EdgeInsetsGeometry.lerp(EdgeInsets.zero, EdgeInsets.zero, 10),
+                          width: 100,
+                          height: 500,
+                          child: image,
+                    ),
                     title: Text(post.title.rendered),
                     subtitle: Text(post.excerpt.rendered),
                   );

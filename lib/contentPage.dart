@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
 import 'package:ndmais/post_model.dart';
@@ -21,12 +22,13 @@ class _MyHomePageState extends State<MyContentPage> {
 
     List<Widget> widgets = [];
 
-    // Widget image = mainImageWidget();
-    // widgets.add(image);
+    Widget image = mainImageWidget();
+    widgets.add(image);
 
     titleWidgets(widgets);
 
     widgets.addAll(getContantWidgets(document));
+    // widgets.add(mainImageWidget());
 
     return Scaffold(
       appBar: AppBar(title: Text(post.title.rendered)),
@@ -38,67 +40,91 @@ class _MyHomePageState extends State<MyContentPage> {
   }
 
   void titleWidgets(List<Widget> widgets) {
+    // widgets.add(Padding(
+    //   padding: const EdgeInsets.all(8.0),
+    //   child: Text(post.title.rendered,
+    //       textAlign: TextAlign.center,
+    //       style: TextStyle(
+    //           fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+    // ));
+
+    // widgets.add(Padding(
+    //   padding: const EdgeInsets.all(8.0),
+    //   child: Text(
+    //     post.excerpt.rendered,
+    //     textAlign: TextAlign.left,
+    //     style: TextStyle(
+    //         fontSize: 20,
+    //         color: Colors.black,
+    //         fontWeight: FontWeight.w300,
+    //         fontFamily: 'Roboto',
+    //         fontStyle: FontStyle.italic),
+    //   ),
+    // ));
+
     widgets.add(Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Text(post.title.rendered,
+      child: Center(
+        child: Text(
+          post.date,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
-    ));
-
-    widgets.add(Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        post.excerpt.rendered,
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-            fontWeight: FontWeight.w300,
-            fontFamily: 'Roboto',
-            fontStyle: FontStyle.italic),
-      ),
-    ));
-
-    widgets.add(Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        post.date,
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-            fontWeight: FontWeight.w300,
-            fontFamily: 'Roboto'),
+              fontSize: 16,
+              color: Colors.black,
+              fontWeight: FontWeight.w300,
+              fontFamily: 'Roboto'),
+        ),
       ),
     ));
   }
 
   Widget mainImageWidget() {
+
     Widget image = Stack(
       children: [
         Container(
           child: Image.network(
             post.image,
             fit: BoxFit.fitWidth,
+            color: const Color.fromRGBO(0, 0, 0, 90),
+            colorBlendMode: BlendMode.darken,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Text(post.title.rendered,
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(post.title.rendered,
+                    style: TextStyle(
+                        // backgroundColor: Colors.black.withOpacity(0.5),
+                        fontSize: 22,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 5.0,
+                            color: Colors.black,
+                            offset: Offset(2.0, 2.0),
+                          ),
+                        ])),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                post.excerpt.rendered,
+                textAlign: TextAlign.left,
                 style: TextStyle(
-                    backgroundColor: Colors.black.withOpacity(0.5),
-                    fontSize: 24,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        blurRadius: 5.0,
-                        color: Colors.black,
-                        offset: Offset(2.0, 2.0),
-                      ),
-                    ])),
-          ),
+                  // backgroundColor: Colors.black.withOpacity(0.5),
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Roboto',
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            )
+          ],
         )
       ],
     );
@@ -132,34 +158,39 @@ class _MyHomePageState extends State<MyContentPage> {
   void getImagesWidget(dom.Element element, List<Widget> widgets) {
     if (element.localName == 'div') {
       element.getElementsByTagName('img').forEach((imgElement) {
-        String link = imgElement.attributes['src']!;
-        String description = element.getElementsByTagName('span')[0].text;
-        if (link != null) {
-          widgets.add(Container(
-            child: Stack(children: [
-              Image.network(
-                link,
-                fit: BoxFit.fitWidth,
-              ),
-              Positioned(
-                bottom: 0,
-                width: MediaQuery.of(context).size.width,
-                child: Text(description,
-                    style: TextStyle(
-                        backgroundColor: Colors.black.withOpacity(0.4),
-                        fontSize: 12,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                            blurRadius: 1.0,
-                            color: Colors.black,
-                            offset: Offset(1.0, 1.0),
-                          ),
-                        ])),
-              )
-            ]),
-          ));
-        }
+          var containsAtt = imgElement.attributes.containsKey('src') ;
+          String link = containsAtt ? imgElement.attributes['src']! : imgElement.attributes['data-src']!;
+          String description = element.getElementsByTagName('span')[0].text;
+          if (link != null) {
+            var image = Image.network(
+              link,
+              fit: BoxFit.fitWidth,
+            );
+            widgets.add(Container(
+              child: Stack(children: [
+                image,
+                Positioned(
+                  bottom: 0,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
+                  child: Text(description,
+                      style: TextStyle(
+                          backgroundColor: Colors.black.withOpacity(0.4),
+                          fontSize: 12,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              blurRadius: 1.0,
+                              color: Colors.black,
+                              offset: Offset(1.0, 1.0),
+                            ),
+                          ])),
+                )
+              ]),
+            ));
+          }
       });
     }
   }
