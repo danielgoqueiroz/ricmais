@@ -10,9 +10,10 @@ class Post {
   final String image;
   final Content title;
   final Content content;
+  final String category;
 
   Post(this.id, this.date, this.excerpt, this.link, this.image, this.title,
-      this.content);
+      this.content, this.category);
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
@@ -22,7 +23,9 @@ class Post {
         json['link'],
         json['_embedded']['wp:featuredmedia']?[0]['source_url'] ?? '',
         Content.fromJson(json['title']) ?? Content(''),
-        Content.fromJson(json['content']) ?? Content(''));
+        Content.fromJson(json['content']) ?? Content(''),
+        json['link'].replaceAll("https://ndmais.com.br/" , "").split('/')[0]
+    );
   }
 }
 
