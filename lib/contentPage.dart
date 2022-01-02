@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyContentPage> {
                   fontSize: 16,
                   color: Colors.white,
                   fontWeight: FontWeight.w300,
-                  fontFamily: 'Roboto',
+                  fontFamily: 'RobotoMono',
                   fontStyle: FontStyle.italic,
                 ),
               ),
