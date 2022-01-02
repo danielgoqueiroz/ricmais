@@ -9,25 +9,35 @@ import 'package:intl/intl.dart';
 import 'package:ndmais/post_model.dart';
 import 'contentPage.dart';
 
-class ContentList extends StatelessWidget {
+var posts;
+int count = 1;
+
+class ContentList extends StatefulWidget {
   ContentList();
 
-  int count = 1;
+  @override
+  State createState() => new DynamicList();
+}
+
+Future<String> getPosts(int page) async {
+  String url =
+      "https://ndmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
+          page.toString() +
+          "&_embed&tags_exclude=222683";
+  var response = await http.get(Uri.parse(url));
+  if (response.statusCode == 200) {
+    var items = response.body;
+    
+    return items;
+  } else {
+    throw Exception('Falha ao carregar posts');
+  }
+}
+
+class DynamicList extends State<ContentList> {
+
   @override
   Widget build(BuildContext context) {
-    Future<String> getPosts(int page) async {
-      String url =
-          "https://ndmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
-              page.toString() +
-              "&_embed&tags_exclude=222683";
-      var response = await http.get(Uri.parse(url));
-      if (response.statusCode == 200) {
-        return response.body;
-      } else {
-        throw Exception('Falha ao carregar posts');
-      }
-    }
-
     return Container(
       child: Container(
         child: FutureBuilder(
@@ -57,7 +67,10 @@ class ContentList extends StatelessWidget {
                           color: Colors.lightBlue,
                           child: FlatButton(
                               onPressed: () {
-                                count += 1;
+                                setState(() {
+                                  count += 1;
+                                  getPosts(count);
+                                });
                               },
                               child: Text("Carregar mais",
                                   style: TextStyle(color: Colors.white)))),
@@ -150,16 +163,16 @@ class ContentList extends StatelessWidget {
       ),
     );
   }
+}
 
-  getDate(String dateText) {
-    if (dateText.length == 0) {
-      return "";
-    }
-    var formatInput = new DateFormat("yyyy-MM-dd'T'HH:mm:ss", "pt_BR");
-    var formatOutput = new DateFormat.yMMMMEEEEd("pt_BR");
-
-    var date = formatInput.parse(dateText);
-    var dateTextOutput = formatOutput.format(date);
-    return dateTextOutput;
+getDate(String dateText) {
+  if (dateText.length == 0) {
+    return "";
   }
+  var formatInput = new DateFormat("yyyy-MM-dd'T'HH:mm:ss", "pt_BR");
+  var formatOutput = new DateFormat.yMMMMEEEEd("pt_BR");
+
+  var date = formatInput.parse(dateText);
+  var dateTextOutput = formatOutput.format(date);
+  return dateTextOutput;
 }
