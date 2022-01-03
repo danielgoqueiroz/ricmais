@@ -16,7 +16,7 @@ class Post {
       this.content, this.category);
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
+    var post = Post(
         json['id'],
         json['date'],
         Content.fromJson(json['excerpt']) ?? Content(''),
@@ -26,6 +26,7 @@ class Post {
         Content.fromJson(json['content']) ?? Content(''),
         json['link'].replaceAll("https://ndmais.com.br/" , "").split('/')[0]
     );
+    return post;
   }
 }
 

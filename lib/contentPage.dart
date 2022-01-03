@@ -79,16 +79,16 @@ class _MyHomePageState extends State<MyContentPage> {
   }
 
   Widget mainImageWidget() {
-
+    var isImageValid = post.image.length > 0;
     Widget image = Stack(
       children: [
         Container(
-          child: Image.network(
+          child: isImageValid ? Image.network(
             post.image,
             fit: BoxFit.fitWidth,
             color: const Color.fromRGBO(0, 0, 0, 90),
             colorBlendMode: BlendMode.darken,
-          ),
+          ) : null,
         ),
         Column(
           children: [
@@ -99,13 +99,13 @@ class _MyHomePageState extends State<MyContentPage> {
                     style: TextStyle(
                         // backgroundColor: Colors.black.withOpacity(0.5),
                         fontSize: 22,
-                        color: Colors.white,
+                        color: isImageValid ? Colors.white : Colors.black,
                         shadows: [
-                          Shadow(
+                          isImageValid ? Shadow(
                             blurRadius: 5.0,
                             color: Colors.black,
                             offset: Offset(2.0, 2.0),
-                          ),
+                          ) : Shadow(),
                         ])),
               ),
             ),
