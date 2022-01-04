@@ -28,10 +28,8 @@ class _DynamicList extends State<ContentList> {
   initState() {
     super.initState();
     _scrollController.addListener(() {
-      print(_scrollController.position.pixels);
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        print("Adicionando mais páginas");
+      if (_scrollController.position.pixels >
+          _scrollController.position.maxScrollExtent - 100) {
         getPosts();
       }
     });
@@ -61,13 +59,10 @@ class _DynamicList extends State<ContentList> {
           );
           return ListTile(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => MyContentPage(post: post)));
+              Navigator.of(context).push(_createRoute(post));
             },
             title: getTile(post, image, context),
-            // trailing: const Icon(Icons.keyboard_arrow_right),
+            trailing: const Icon(Icons.keyboard_arrow_right),
           );
         });
   }
@@ -85,6 +80,7 @@ class _DynamicList extends State<ContentList> {
         Post post = Post.fromJson(_item);
         setState(() {
           posts.add(post);
+          posts.toSet().toList();
         });
       });
     } else {
@@ -187,5 +183,22 @@ class _DynamicList extends State<ContentList> {
     var date = formatInput.parse(dateText);
     var dateTextOutput = formatOutput.format(date);
     return dateTextOutput;
+  }
+
+  Route _createRoute(Post post) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => MyContentPage(post: post),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(1.0, 0.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    });
   }
 }

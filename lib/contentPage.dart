@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
 import 'package:ndmais/post_model.dart';
+// import 'package:better_player/better_player.dart';
+// import 'package:video_player/video_player.dart';
 
 class MyContentPage extends StatefulWidget {
   MyContentPage({Key? key, required this.post}) : super(key: key);
@@ -40,13 +42,13 @@ class _MyHomePageState extends State<MyContentPage> {
   }
 
   void titleWidgets(List<Widget> widgets) {
-    // widgets.add(Padding(
-    //   padding: const EdgeInsets.all(8.0),
-    //   child: Text(post.title.rendered,
-    //       textAlign: TextAlign.center,
-    //       style: TextStyle(
-    //           fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
-    // ));
+    widgets.add(Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(post.title.rendered,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+    ));
 
     // widgets.add(Padding(
     //   padding: const EdgeInsets.all(8.0),
@@ -147,9 +149,29 @@ class _MyHomePageState extends State<MyContentPage> {
 
   void getVideoElement(dom.Element element, List<Widget> widgets) {
     if (element.localName == 'div') {
-      element.getElementsByClassName('ndmais-content-video').forEach((element) {
+      var nameClass = element.attributes['class'];
+      if (nameClass == 'ndmais-content-video') {
+        // var videoSource = element.getElementsByTagName('source')['src'];
+        // widgets.add(
+        //   Container(
+        //     margin: EdgeInsets.all(20),
+        //     child: AspectRatio(
+        //       aspectRatio: 16 / 9,
+        //       child: BetterPlayer.network(
+        //         "https://static.ndmais.com.br/2022/01/d00c7a58-c4b7-4e31-b8d2-54384829c19b-1.mp4",
+        //         betterPlayerConfiguration: BetterPlayerConfiguration(
+        //           aspectRatio: 16 / 9,
+        //           autoPlay: true
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // );
+      }
+
+      element.getElementsByClassName('player-content').forEach((element) {
         widgets.add(
-          Text('Vídeo'),
+          Text('player-content'),
         );
       });
     }
