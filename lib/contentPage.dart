@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:html/dom.dart' as dom;
@@ -85,12 +86,14 @@ class _MyHomePageState extends State<MyContentPage> {
     Widget image = Stack(
       children: [
         Container(
-          child: isImageValid ? Image.network(
-            post.image,
-            fit: BoxFit.fitWidth,
-            color: const Color.fromRGBO(0, 0, 0, 90),
-            colorBlendMode: BlendMode.darken,
-          ) : null,
+          child: isImageValid
+              ? Image.network(
+                  post.image,
+                  fit: BoxFit.fitWidth,
+                  color: const Color.fromRGBO(0, 0, 0, 90),
+                  colorBlendMode: BlendMode.darken,
+                )
+              : null,
         ),
         Column(
           children: [
@@ -103,11 +106,13 @@ class _MyHomePageState extends State<MyContentPage> {
                         fontSize: 22,
                         color: isImageValid ? Colors.white : Colors.black,
                         shadows: [
-                          isImageValid ? Shadow(
-                            blurRadius: 5.0,
-                            color: Colors.black,
-                            offset: Offset(2.0, 2.0),
-                          ) : Shadow(),
+                          isImageValid
+                              ? Shadow(
+                                  blurRadius: 5.0,
+                                  color: Colors.black,
+                                  offset: Offset(2.0, 2.0),
+                                )
+                              : Shadow(),
                         ])),
               ),
             ),
@@ -179,9 +184,35 @@ class _MyHomePageState extends State<MyContentPage> {
 
   void getImagesWidget(dom.Element element, List<Widget> widgets) {
     if (element.localName == 'div') {
-      element.getElementsByTagName('img').forEach((imgElement) {
-          var containsAtt = imgElement.attributes.containsKey('src') ;
-          String link = containsAtt ? imgElement.attributes['src']! : imgElement.attributes['data-src']!;
+      var classText = element.attributes['class'];
+      var isGaleryElement =
+          classText.toString().contains('galeria-de-fotos-slider');
+      if (isGaleryElement) {
+        var fotosElements = element.getElementsByTagName('img');
+        var carrousel = CarouselSlider(
+          options: CarouselOptions(height: 250.0),
+          items: fotosElements.map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.all(5),
+                    child: Image.network(
+                      i.attributes['data-src'].toString(),
+                      fit: BoxFit.scaleDown,
+                    )
+                );
+              },
+            );
+          }).toList(),
+        );
+        widgets.add(carrousel);
+      } else {
+        element.getElementsByTagName('img').forEach((imgElement) {
+          var containsAtt = imgElement.attributes.containsKey('src');
+          String link = containsAtt
+              ? imgElement.attributes['src']!
+              : imgElement.attributes['data-src']!;
           String description = element.getElementsByTagName('span')[0].text;
           if (link != null) {
             var image = Image.network(
@@ -193,10 +224,7 @@ class _MyHomePageState extends State<MyContentPage> {
                 image,
                 Positioned(
                   bottom: 0,
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
+                  width: MediaQuery.of(context).size.width,
                   child: Text(description,
                       style: TextStyle(
                           backgroundColor: Colors.black.withOpacity(0.4),
@@ -213,7 +241,8 @@ class _MyHomePageState extends State<MyContentPage> {
               ]),
             ));
           }
-      });
+        });
+      }
     }
   }
 
