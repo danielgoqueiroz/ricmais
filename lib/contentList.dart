@@ -1,7 +1,9 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:http/http.dart' as http;
@@ -68,14 +70,8 @@ class _DynamicList extends State<ContentList> {
   }
 
   getPosts() async {
-    this.page = page + 1;
-    String url = "https://ndmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
-        page.toString() +
-        "&_embed&tags_exclude=222683";
-    var response = await http.get(Uri.parse(url));
-    if (response.statusCode == 200) {
-      var json = response.body;
-      var jsonArray = List.from(jsonDecode(json));
+    var json = await rootBundle.loadString('assets/posts.json');
+    var jsonArray = List.from(jsonDecode(json));
       jsonArray.forEach((_item) {
         Post post = Post.fromJson(_item);
         setState(() {
@@ -83,9 +79,26 @@ class _DynamicList extends State<ContentList> {
           posts.toSet().toList();
         });
       });
-    } else {
-      throw Exception('Falha ao carregar posts');
-    }
+
+    // this.page = page + 1;
+    // String url = "https://ndmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
+    //     page.toString() +
+    //     "&_embed&tags_exclude=222683";
+
+    // var response = await http.get(Uri.parse(url));
+    // if (response.statusCode == 200) {
+    //   var json = response.body;
+    //   var jsonArray = List.from(jsonDecode(json));
+    //   jsonArray.forEach((_item) {
+    //     Post post = Post.fromJson(_item);
+    //     setState(() {
+    //       posts.add(post);
+    //       posts.toSet().toList();
+    //     });
+    //   });
+    // } else {
+    //   throw Exception('Falha ao carregar posts');
+    // }
   }
 
   Column getTile(Post post, Image image, BuildContext context) {
