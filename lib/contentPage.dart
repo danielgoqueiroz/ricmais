@@ -4,8 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
 import 'package:ndmais/post_model.dart';
-// import 'package:better_player/better_player.dart';
-// import 'package:video_player/video_player.dart';
+import 'package:ndmais/videoPlayer.dart';
 
 class MyContentPage extends StatefulWidget {
   MyContentPage({Key? key, required this.post}) : super(key: key);
@@ -30,7 +29,7 @@ class _MyHomePageState extends State<MyContentPage> {
 
     titleWidgets(widgets);
 
-    widgets.addAll(getContantWidgets(document));
+    widgets.addAll(getContentWidgets(document));
     // widgets.add(mainImageWidget());
 
     return Scaffold(
@@ -138,7 +137,7 @@ class _MyHomePageState extends State<MyContentPage> {
     return image;
   }
 
-  List<Widget> getContantWidgets(dom.Document document) {
+  List<Widget> getContentWidgets(dom.Document document) {
     List<Widget> widgets = [];
 
     dom.Element body = document.getElementsByTagName('body')[0];
@@ -152,26 +151,12 @@ class _MyHomePageState extends State<MyContentPage> {
     return widgets;
   }
 
-  void getVideoElement(dom.Element element, List<Widget> widgets) {
+  void getVideoElement(dom.Element element, List<Widget> widgets) async {
     if (element.localName == 'div') {
       var nameClass = element.attributes['class'];
       if (nameClass == 'ndmais-content-video') {
-        // var videoSource = element.getElementsByTagName('source')['src'];
-        // widgets.add(
-        //   Container(
-        //     margin: EdgeInsets.all(20),
-        //     child: AspectRatio(
-        //       aspectRatio: 16 / 9,
-        //       child: BetterPlayer.network(
-        //         "https://static.ndmais.com.br/2022/01/d00c7a58-c4b7-4e31-b8d2-54384829c19b-1.mp4",
-        //         betterPlayerConfiguration: BetterPlayerConfiguration(
-        //           aspectRatio: 16 / 9,
-        //           autoPlay: true
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // );
+        var videoSource = element.getElementsByTagName('source').elementAt(0).attributes['src'].toString();
+        widgets.add(VideoApp(key: Key("teste"), url: videoSource));
       }
 
       element.getElementsByClassName('player-content').forEach((element) {
@@ -200,8 +185,7 @@ class _MyHomePageState extends State<MyContentPage> {
                     child: Image.network(
                       i.attributes['data-src'].toString(),
                       fit: BoxFit.scaleDown,
-                    )
-                );
+                    ));
               },
             );
           }).toList(),
@@ -214,33 +198,32 @@ class _MyHomePageState extends State<MyContentPage> {
               ? imgElement.attributes['src']!
               : imgElement.attributes['data-src']!;
           String description = element.getElementsByTagName('span')[0].text;
-          if (link != null) {
-            var image = Image.network(
-              link,
-              fit: BoxFit.fitWidth,
-            );
-            widgets.add(Container(
-              child: Stack(children: [
-                image,
-                Positioned(
-                  bottom: 0,
-                  width: MediaQuery.of(context).size.width,
-                  child: Text(description,
-                      style: TextStyle(
-                          backgroundColor: Colors.black.withOpacity(0.4),
-                          fontSize: 12,
-                          color: Colors.white,
-                          shadows: [
-                            Shadow(
-                              blurRadius: 1.0,
-                              color: Colors.black,
-                              offset: Offset(1.0, 1.0),
-                            ),
-                          ])),
-                )
-              ]),
-            ));
-          }
+
+          var image = Image.network(
+            link,
+            fit: BoxFit.fitWidth,
+          );
+          widgets.add(Container(
+            child: Stack(children: [
+              image,
+              Positioned(
+                bottom: 0,
+                width: MediaQuery.of(context).size.width,
+                child: Text(description,
+                    style: TextStyle(
+                        backgroundColor: Colors.black.withOpacity(0.4),
+                        fontSize: 12,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 1.0,
+                            color: Colors.black,
+                            offset: Offset(1.0, 1.0),
+                          ),
+                        ])),
+              )
+            ]),
+          ));
         });
       }
     }

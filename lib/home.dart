@@ -22,20 +22,21 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Container(
             decoration: BoxDecoration(
                 boxShadow: [
-                  BoxShadow(
-                      color: Colors.black26,
-                      spreadRadius: 2,
-                      blurRadius: 20,
-                      offset: Offset(0, 3)
-                  )
+                  // BoxShadow(
+                  //     color: Colors.black26,
+                  //     spreadRadius: 2,
+                  //     blurRadius: 20,
+                  //     offset: Offset(0, 3)
+                  // )
                 ]
             ),
-            height: 50,
-            width: 50,
-            child: Image(
-                fit: BoxFit.fitWidth,
-                image: AssetImage('assets/images/logo.png')
-            )
+            // height: 30,
+            width: 100,
+            child: Text("NEWS+")
+            // child: Image(
+            //     fit: BoxFit.fitWidth,
+            //     image: AssetImage('assets/images/logo.png')
+            // )
         ),
       ),
       body: ContentList(),

@@ -35,7 +35,8 @@ dependencies:
   flutter_launcher_icons: ^0.9.2
   intl: ^0.17.0
   carousel_slider: ^4.0.0
-#  better_player: ^0.0.81
+  video_player: ^2.2.10
+
 
 dev_dependencies:
   flutter_test:
