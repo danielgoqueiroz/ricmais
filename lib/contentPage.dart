@@ -156,7 +156,9 @@ class _MyHomePageState extends State<MyContentPage> {
       var nameClass = element.attributes['class'];
       if (nameClass == 'ndmais-content-video') {
         var videoSource = element.getElementsByTagName('source').elementAt(0).attributes['src'].toString();
-        widgets.add(VideoApp(key: Key("teste"), url: videoSource));
+        var videoCaption = element.getElementsByClassName('ndmais-content-video-caption').elementAt(0).text;
+
+        widgets.add(new VideoApp(url: videoSource, caption: videoCaption));
       }
 
       element.getElementsByClassName('player-content').forEach((element) {
