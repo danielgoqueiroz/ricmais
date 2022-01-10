@@ -56,6 +56,7 @@ class _VideoAppState extends State<VideoApp> {
                 height: 50,
               ),
               FloatingActionButton(
+                heroTag: widget.caption,
                 onPressed: () {
                   setState(() {
                     _controller.value.isPlaying

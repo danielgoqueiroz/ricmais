@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ndmais/videoPlayer.dart';
+import 'package:ndmais/view/videoPlayer.dart';
 
-import 'home.dart';
+import 'view/home.dart';
 
 void main() {
   runApp(MyApp());

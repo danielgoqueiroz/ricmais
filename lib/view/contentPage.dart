@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
-import 'package:ndmais/post_model.dart';
-import 'package:ndmais/videoPlayer.dart';
+import 'package:ndmais/model/post.dart';
+import 'package:ndmais/view/videoPlayer.dart';
 
 class MyContentPage extends StatefulWidget {
   MyContentPage({Key? key, required this.post}) : super(key: key);
@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyContentPage> {
 
   @override
   Widget build(BuildContext context) {
-    dom.Document document = parse(post.content.rendered);
+    dom.Document document = parse(post.content);
 
     List<Widget> widgets = [];
 
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyContentPage> {
     // widgets.add(mainImageWidget());
 
     return Scaffold(
-      appBar: AppBar(title: Text(post.title.rendered)),
+      appBar: AppBar(title: Text(post.title)),
       body: Container(
           child: SingleChildScrollView(
         child: Column(children: widgets),
@@ -42,33 +42,12 @@ class _MyHomePageState extends State<MyContentPage> {
   }
 
   void titleWidgets(List<Widget> widgets) {
-    widgets.add(Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(post.title.rendered,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
-    ));
-
-    // widgets.add(Padding(
-    //   padding: const EdgeInsets.all(8.0),
-    //   child: Text(
-    //     post.excerpt.rendered,
-    //     textAlign: TextAlign.left,
-    //     style: TextStyle(
-    //         fontSize: 20,
-    //         color: Colors.black,
-    //         fontWeight: FontWeight.w300,
-    //         fontFamily: 'Roboto',
-    //         fontStyle: FontStyle.italic),
-    //   ),
-    // ));
 
     widgets.add(Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
         child: Text(
-          post.date,
+          post.date.toString(),
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 16,
@@ -99,7 +78,7 @@ class _MyHomePageState extends State<MyContentPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: Text(post.title.rendered,
+                child: Text(post.title,
                     style: TextStyle(
                         // backgroundColor: Colors.black.withOpacity(0.5),
                         fontSize: 22,
@@ -118,7 +97,7 @@ class _MyHomePageState extends State<MyContentPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                post.excerpt.rendered,
+                post.excerpt,
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   // backgroundColor: Colors.black.withOpacity(0.5),
