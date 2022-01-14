@@ -1,6 +1,13 @@
-# App flutter NDmais (Aplicativo não oficial, não publicavél e apenas para estudos)
+# App flutter
 
-Aplicativo de visualização de matérias do site ndmais.com. Esse aplicativo não está disponível para produção, sendo apenas apenas utilizado para estudos em flutter.
+Aplicativo de visualização de conteúdos em flutter com base em api wordpress
+
+## Telas
+![Alt text](assets/screen/screen_01.jpg.jpg?raw=true "")
+![Alt text](assets/screen/screen_02.jpg.jpg?raw=true "")
+![Alt text](assets/screen/screen_03.jpg.jpg?raw=true "")
+![Alt text](assets/screen/screen_04.jpg.jpg?raw=true "")
+
 
 TODO
 Adicionar infos sobre clube-ndmais
