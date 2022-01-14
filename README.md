@@ -3,10 +3,11 @@
 Aplicativo de visualização de conteúdos em flutter com base em api wordpress
 
 ## Telas
-![Alt text](assets/screen/screen_01.jpg?raw=true "")
-![Alt text](assets/screen/screen_02.jpg?raw=true "")
-![Alt text](assets/screen/screen_03.jpg?raw=true "")
-![Alt text](assets/screen/screen_04.jpg?raw=true "")
+
+![Alt text](assets/screen/screen_01.jpeg "")
+![Alt text](assets/screen/screen_02.jpg "")
+![Alt text](assets/screen/screen_03.jpg "")
+![Alt text](assets/screen/screen_04.jpg "")
 
 
 TODO
