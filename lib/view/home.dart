@@ -19,24 +19,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
         title: Container(
-            decoration: BoxDecoration(
-                boxShadow: [
-                  // BoxShadow(
-                  //     color: Colors.black26,
-                  //     spreadRadius: 2,
-                  //     blurRadius: 20,
-                  //     offset: Offset(0, 3)
-                  // )
-                ]
-            ),
-            // height: 30,
-            width: 100,
-            child: Text("NEWS+")
-            // child: Image(
-            //     fit: BoxFit.fitWidth,
-            //     image: AssetImage('assets/images/logo.png')
-            // )
+            width: 50,
+            child: Container(
+              child: Image(
+                  fit: BoxFit.fitWidth,
+                  image: AssetImage('assets/images/logo.png')
+              ),
+            )
         ),
       ),
       body: ContentList(),
