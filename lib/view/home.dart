@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 
 import 'contentList.dart';
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -18,20 +17,29 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Container(
-            width: 50,
-            child: Container(
-              child: Image(
-                  fit: BoxFit.fitWidth,
-                  image: AssetImage('assets/images/logo.png')
-              ),
-            )
-        ),
-      ),
+      appBar: getAppBar(),
       body: ContentList(),
+    );
+  }
+
+  AppBar getAppBar() {
+    return AppBar(
+      elevation: 8,
+      shadowColor: Colors.lightBlue,
+      centerTitle: true,
+      backgroundColor: Colors.white,
+      title: getTitle(),
+    );
+  }
+
+  Container getTitle() {
+    return Container(width: 50, child: getLogo());
+  }
+
+  Container getLogo() {
+    return Container(
+      child: Image(
+          fit: BoxFit.fitWidth, image: AssetImage('assets/images/logo.png')),
     );
   }
 }

@@ -44,27 +44,30 @@ class _DynamicList extends State<ContentList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-              thickness: 3,
-              color: Colors.black12,
-            ),
-        controller: _scrollController,
-        itemCount: posts.length,
-        itemBuilder: (BuildContext context, int index) {
-          var post = posts[index];
-          var image = Image.network(
-            post.image,
-            fit: BoxFit.fill,
-          );
-          return ListTile(
-            onTap: () {
-              Navigator.of(context).push(_createRoute(post));
-            },
-            title: getTile(post, image, context),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-          );
-        });
+    return Container(
+      margin: EdgeInsets.only(top: 20, right: 0, left: 0),
+      child: ListView.separated(
+          separatorBuilder: (context, index) => Divider(
+                thickness: 3,
+                color: Colors.black12,
+              ),
+          controller: _scrollController,
+          itemCount: posts.length,
+          itemBuilder: (BuildContext context, int index) {
+            var post = posts[index];
+            var image = Image.network(
+              post.image,
+              fit: BoxFit.fill,
+            );
+            return ListTile(
+              onTap: () {
+                Navigator.of(context).push(_createRoute(post));
+              },
+              title: getTile(post, image, context),
+              trailing: const Icon(Icons.keyboard_arrow_right),
+            );
+          }),
+    );
   }
 
   getPosts() async {
