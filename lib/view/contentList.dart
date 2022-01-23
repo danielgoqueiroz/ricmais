@@ -47,16 +47,31 @@ class _DynamicList extends State<ContentList> {
     return Container(
       margin: EdgeInsets.only(top: 20, right: 0, left: 0),
       child: ListView.separated(
-          separatorBuilder: (context, index) => Divider(
-                thickness: 3,
-                color: Colors.black12,
-              ),
+          separatorBuilder: getSeparator,
           controller: _scrollController,
           itemCount: posts.length,
           itemBuilder: (BuildContext context, int index) {
             var post = posts[index];
             var image = Image.network(
               post.image,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                } else {
+                  return Stack(
+                    children: [
+                      Center(
+                        child: Text("Carregando...")
+                      ),
+                      Container(
+                        color: Colors.black12,
+                        height: 200,
+                      )
+                    ],
+                  );
+                }
+              },
               fit: BoxFit.fill,
             );
             return ListTile(
@@ -69,6 +84,11 @@ class _DynamicList extends State<ContentList> {
           }),
     );
   }
+
+  Widget getSeparator(context, index) => Divider(
+              thickness: 3,
+              color: Colors.black12,
+            );
 
   getPosts() async {
     var json = await rootBundle.loadString('assets/posts.json');
