@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyContentPage> {
           String link = containsAtt
               ? imgElement.attributes['src']!
               : imgElement.attributes['data-src']!;
-          String description = element.getElementsByTagName('span')[0].text;
+          // String description = element.getElementsByTagName('span')[0].text;
 
           var image = Image.network(
             link,
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyContentPage> {
               Positioned(
                 bottom: 0,
                 width: MediaQuery.of(context).size.width,
-                child: Text(description,
+                child: Text("imagem",
                     style: TextStyle(
                         backgroundColor: Colors.black.withOpacity(0.4),
                         fontSize: 12,
