@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
       elevation: 8,
       shadowColor: Colors.lightBlue,
       centerTitle: true,
-      backgroundColor: Colors.white,
+      backgroundColor:  Color.fromRGBO(3, 45, 90, 1),
       title: getTitle(),
     );
   }

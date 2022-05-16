@@ -19,7 +19,8 @@ class Post {
   factory Post.fromJson(Map<String, dynamic> json) {
     var dateText = json['date'];
     var formatInput = new DateFormat("yyyy-MM-dd'T'HH:mm:ss", "pt_BR");
-    var date = new DateTime.fromMicrosecondsSinceEpoch(formatInput.parse(dateText).microsecondsSinceEpoch);
+    var date = new DateTime.fromMicrosecondsSinceEpoch(
+        formatInput.parse(dateText).microsecondsSinceEpoch);
 
     var post = Post(
         json['id'],
@@ -29,8 +30,7 @@ class Post {
         json['_embedded']['wp:featuredmedia']?[0]['source_url'] ?? '',
         json['title']?['rendered'],
         json['content']?['rendered'],
-        json['link'].replaceAll("https://ndmais.com.br/" , "").split('/')[0]
-    );
+        json['link'].replaceAll("https://ricmais.com.br/", "").split('/')[0]);
     return post;
   }
 }

@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
       ],
-      supportedLocales: [const Locale('pt', 'BR')],
+      supportedLocales: [const Locale('en', '')],
       title: 'Ndmais',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
+import 'package:http/http.dart';
 import 'package:ndmais/model/post.dart';
 import 'contentPage.dart';
 
@@ -61,9 +62,7 @@ class _DynamicList extends State<ContentList> {
                 } else {
                   return Stack(
                     children: [
-                      Center(
-                        child: Text("Carregando...")
-                      ),
+                      Center(child: Text("Carregando...")),
                       Container(
                         color: Colors.black12,
                         height: 200,
@@ -86,12 +85,12 @@ class _DynamicList extends State<ContentList> {
   }
 
   Widget getSeparator(context, index) => Divider(
-              thickness: 3,
-              color: Colors.black12,
-            );
+        thickness: 3,
+        color: Colors.black12,
+      );
 
   getPosts() async {
-    var json = await rootBundle.loadString('assets/posts.json');
+    var json = await rootBundle.loadString('assets/ricmais_posts.json');
     var jsonArray = List.from(jsonDecode(json));
     jsonArray.forEach((_item) {
       Post post = Post.fromJson(_item);
@@ -102,11 +101,11 @@ class _DynamicList extends State<ContentList> {
     });
 
     // this.page = page + 1;
-    // String url = "https://ndmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
+    // String url = "https://ricmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
     //     page.toString() +
     //     "&_embed&tags_exclude=222683";
 
-    // var response = await http.get(Uri.parse(url));
+    // var response = await get(Uri.parse(url));
     // if (response.statusCode == 200) {
     //   var json = response.body;
     //   var jsonArray = List.from(jsonDecode(json));
@@ -158,9 +157,12 @@ class _DynamicList extends State<ContentList> {
       Container(
         margin: EdgeInsets.only(top: 10),
         child: RichText(
-
             text: TextSpan(children: [
-          TextSpan(text: "${post.title}. ", style: DefaultTextStyle.of(context).style.apply(fontWeightDelta: 10),),
+          TextSpan(
+            text: "${post.title}. ",
+            style:
+                DefaultTextStyle.of(context).style.apply(fontWeightDelta: 10),
+          ),
           TextSpan(
             text: post.excerpt,
             style: DefaultTextStyle.of(context).style,
