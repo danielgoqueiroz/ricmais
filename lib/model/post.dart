@@ -1,7 +1,11 @@
 import 'package:html_unescape/html_unescape.dart';
 import 'package:intl/intl.dart';
+import 'package:logging/logging.dart';
+
 
 final unescape = new HtmlUnescape();
+final _logger = Logger('Post');
+
 
 class Post {
   final int id;
@@ -22,15 +26,27 @@ class Post {
     var date = new DateTime.fromMicrosecondsSinceEpoch(
         formatInput.parse(dateText).microsecondsSinceEpoch);
 
-    var post = Post(
-        json['id'],
-        date,
-        json['excerpt']?['rendered'],
-        json['link'],
-        json['_embedded']['wp:featuredmedia']?[0]['source_url'] ?? '',
-        json['title']?['rendered'],
-        json['content']?['rendered'],
-        json['link'].replaceAll("https://ricmais.com.br/", "").split('/')[0]);
+    var post = Post(0, DateTime.now(), "", "", "", "", "", "");
+    try {
+      var id = json['id'];
+      var excerpt = json['excerpt']?['rendered'];
+      var link = json['link'];
+      var image = json['_embedded']['wp:featuredmedia']?[0]['source_url'] ?? '';
+      var title = json['title']?['rendered'];
+      var content = json['content']?['rendered'];
+      var linkPage = json['link'].replaceAll("https://ricmais.com.br/", "").split('/')[0];
+      post = Post(
+          id,
+          date,
+          excerpt,
+          link,
+          image,
+          title,
+          content,
+          linkPage);
+    } catch (err) {
+      _logger.info(err);
+    }
     return post;
   }
 }

@@ -1,16 +1,19 @@
 import 'dart:convert';
+import 'package:html/dom.dart' as dom;
+import 'package:html/parser.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
-import 'package:http/http.dart';
 import 'package:ndmais/model/post.dart';
 import 'contentPage.dart';
+import 'package:logging/logging.dart';
 
 var posts;
 int count = 1;
+final _logger = Logger('ContentList');
 
 class ContentList extends StatefulWidget {
   const ContentList({Key? key}) : super(key: key);
@@ -62,7 +65,7 @@ class _DynamicList extends State<ContentList> {
                 } else {
                   return Stack(
                     children: [
-                      Center(child: Text("Carregando...")),
+                      Center(child: Text("Carregando...",style: TextStyle(color: Colors.black54))),
                       Container(
                         color: Colors.black12,
                         height: 200,
@@ -78,7 +81,7 @@ class _DynamicList extends State<ContentList> {
                 Navigator.of(context).push(_createRoute(post));
               },
               title: getTile(post, image, context),
-              trailing: const Icon(Icons.keyboard_arrow_right),
+              // trailing: const Icon(Icons.keyboard_arrow_right),
             );
           }),
     );
@@ -92,13 +95,17 @@ class _DynamicList extends State<ContentList> {
   getPosts() async {
     var json = await rootBundle.loadString('assets/ricmais_posts.json');
     var jsonArray = List.from(jsonDecode(json));
-    jsonArray.forEach((_item) {
-      Post post = Post.fromJson(_item);
-      setState(() {
-        posts.add(post);
-        posts.toSet().toList();
+    try {
+      jsonArray.forEach((_item) {
+        Post post = Post.fromJson(_item);
+        setState(() {
+          posts.add(post);
+          posts.toSet().toList();
+        });
       });
-    });
+    } catch (err) {
+      _logger.info(err);
+    }
 
     // this.page = page + 1;
     // String url = "https://ricmais.com.br/wp-json/wp/v2/posts?per_page=5&page=" +
@@ -127,21 +134,7 @@ class _DynamicList extends State<ContentList> {
         alignment: Alignment.topLeft,
         child: RichText(
             text: TextSpan(children: [
-          TextSpan(
-            text: post.category.toUpperCase(),
-            style: TextStyle(
-                fontSize: 16,
-                color: Colors.blue,
-                fontFamily: "Roboto",
-                fontWeight: FontWeight.bold),
-          ),
-          TextSpan(
-            text: " | ",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black12,
-            ),
-          ),
+          getTitle(post.category),
           TextSpan(
             text: getDate(post.date),
             style: TextStyle(
@@ -164,7 +157,7 @@ class _DynamicList extends State<ContentList> {
                 DefaultTextStyle.of(context).style.apply(fontWeightDelta: 10),
           ),
           TextSpan(
-            text: post.excerpt,
+            text: getDescription(post.excerpt),
             style: DefaultTextStyle.of(context).style,
           ),
           TextSpan(
@@ -250,5 +243,72 @@ class _DynamicList extends State<ContentList> {
             child: child,
           );
         });
+  }
+
+  getDescription(String excerpt) {
+    dom.Document document = parse(excerpt);
+    return document.getElementsByTagName("p").first.innerHtml;
+  }
+
+  getCategoryColorBackground(String category) {
+    switch (category.toUpperCase()) {
+      case "FRIO":
+        return Colors.blue;
+      case "ESPORTES":
+        return Color.fromRGBO(3, 45, 90, 1);
+      case "SEGURANCA":
+        return Color.fromRGBO(158, 28, 35, 1);
+      case "NOTICIAS":
+        return Color.fromRGBO(158, 28, 35, 1);
+      case "ESTILO":
+        return Color.fromRGBO(166, 163, 163, 1);
+      case "POLITICA":
+        return Color.fromRGBO(110, 153, 174, 1);
+      case "CLIMA E TEMPO":
+        return Color.fromRGBO(34, 158, 218, 1.0);
+      case "SAUDE":
+        return Color.fromRGBO(74, 203, 75, 1.0);
+      case "COTIDIANO":
+        return Color.fromRGBO(3, 45, 90, 1);
+      default :
+        return Color.fromRGBO(245, 248, 248, 1.0);
+    }
+  }
+
+  getCategoryColor(String category) {
+    switch (category.toUpperCase()) {
+      case "FRIO":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "ESPORTES":
+        return Color.fromRGBO(252, 249, 249, 1.0);
+      case "SEGURANCA":
+        return Color.fromRGBO(250, 249, 249, 1.0);
+      case "NOTICIAS":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "ESTILO":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "POLITICA":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "CLIMA E TEMPO":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "SAÚDE":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      case "COTIDIANO":
+        return Color.fromRGBO(255, 255, 255, 1.0);
+      default :
+        return Color.fromRGBO(255, 255, 255, 1.0);
+    }
+  }
+
+  getTitle(String category) {
+    return TextSpan(
+      text: category.toUpperCase(),
+      style: TextStyle(
+          backgroundColor: getCategoryColorBackground(category),
+          fontSize: 16,
+          color: getCategoryColor(category),
+          fontFamily: "Roboto",
+          fontWeight: FontWeight.bold),
+    );
   }
 }
