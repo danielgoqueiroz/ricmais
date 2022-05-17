@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   AppBar getAppBar() {
     return AppBar(
-      elevation: 8,
+      elevation: 5,
       shadowColor: Colors.lightBlue,
       centerTitle: true,
       backgroundColor:  Color.fromRGBO(3, 45, 90, 1),
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Container getTitle() {
-    return Container(width: 50, child: getLogo());
+    return Container(width: 85, child: getLogo());
   }
 
   Container getLogo() {

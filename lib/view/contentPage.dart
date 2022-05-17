@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
 import 'package:ndmais/model/post.dart';
@@ -97,7 +98,7 @@ class _MyHomePageState extends State<MyContentPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                post.excerpt,
+                getText(post.excerpt),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   // backgroundColor: Colors.black.withOpacity(0.5),
@@ -125,6 +126,8 @@ class _MyHomePageState extends State<MyContentPage> {
         getTextsWidget(element, widgets);
         getImagesWidget(element, widgets);
         getVideoElement(element, widgets);
+        getCoteElement(element, widgets);
+        getReadMoreElement(element, widgets);
       }
     });
     return widgets;
@@ -221,4 +224,37 @@ class _MyHomePageState extends State<MyContentPage> {
       ));
     }
   }
+
+  String getText(String excerpt) {
+    dom.Document document = parse(excerpt);
+    return document.getElementsByTagName("p").first.innerHtml;
+  }
+
+  void getCoteElement(dom.Element element, List<Widget> widgets) {
+    if (element.localName == 'blockquote') {
+      widgets.add(Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Text(element.text,
+            style: TextStyle(
+              fontSize: 18,
+              fontStyle: FontStyle.italic
+            )),
+      ));
+    }
+  }
+
+  void getReadMoreElement(dom.Element element, List<Widget> widgets) {
+    if (element.localName == 'ul') {
+      widgets.add(Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Text(element.text,
+            style: TextStyle(
+                fontSize: 16,
+              fontWeight: FontWeight.bold
+
+            )),
+      ));
+    }
+  }
+
 }

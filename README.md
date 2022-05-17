@@ -1,5 +1,6 @@
 # App flutter (estudo de caso)
 
+https://ricmais.com.br/wp-json/wp/v2/posts?per_page=100&exclude=52091&_embed
 Aplicativo de visualização de conteúdos em flutter com base em api wordpress.
 
 ## A idéia
