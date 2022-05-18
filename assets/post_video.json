@@ -1,0 +1,1018 @@
+[
+  {
+    "id": 1969852,
+    "date": "2022-05-16T17:55:03",
+    "date_gmt": "2022-05-16T20:55:03",
+    "guid": {
+      "rendered": "https://ricmais.com.br/noticias/cidade-alerta-parana-ao-vivo-16-05-2022/"
+    },
+    "modified": "2022-05-16T18:01:02",
+    "modified_gmt": "2022-05-16T21:01:02",
+    "slug": "cidade-alerta-parana-ao-vivo-16-05-2022",
+    "status": "publish",
+    "type": "post",
+    "link": "https://ricmais.com.br/noticias/cidade-alerta-parana-ao-vivo-16-05-2022/",
+    "title": {
+      "rendered": "Cidade Alerta Paraná Ao Vivo | 16/05/2022"
+    },
+    "content": {
+      "rendered": "<div class=\"youtube-responsive-container\"><iframe loading=\"lazy\" width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/HN_mXWeDsaI\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>\n<p>Cidade Alerta Paraná Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Cidade Alerta Paraná Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "author": 233,
+    "featured_media": 1969853,
+    "comment_status": "closed",
+    "ping_status": "",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [
+      1
+    ],
+    "tags": [
+      52064,
+      51212
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969852"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969852"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 0,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969852/revisions"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969853"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media?parent=1969852"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/categories?post=1969852"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/tags?post=1969852"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 233,
+          "name": "Redação RIC Mais",
+          "url": "",
+          "description": "",
+          "link": "https://ricmais.com.br/autor/redacao/",
+          "slug": "redacao",
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "id": 1969853,
+          "date": "2022-05-16T00:00:00",
+          "slug": "hn_mxwedsai",
+          "type": "attachment",
+          "link": "https://ricmais.com.br/noticias/cidade-alerta-parana-ao-vivo-16-05-2022/attachment/hn_mxwedsai/",
+          "title": {
+            "rendered": "HN_mXWeDsaI"
+          },
+          "author": 0,
+          "caption": {
+            "rendered": ""
+          },
+          "alt_text": "",
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "media_details": {
+            "width": 1280,
+            "height": 720,
+            "file": "2022/05/HN_mXWeDsaI.jpg",
+            "sizes": {
+              "medium": {
+                "file": "HN_mXWeDsaI-480x270.jpg",
+                "width": 480,
+                "height": 270,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-480x270.jpg"
+              },
+              "large": {
+                "file": "HN_mXWeDsaI-1067x600.jpg",
+                "width": 1067,
+                "height": 600,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-1067x600.jpg"
+              },
+              "thumbnail": {
+                "file": "HN_mXWeDsaI-150x150.jpg",
+                "width": 150,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-150x150.jpg"
+              },
+              "medium_large": {
+                "file": "HN_mXWeDsaI-768x432.jpg",
+                "width": 768,
+                "height": 432,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-768x432.jpg"
+              },
+              "thumb_capa_small": {
+                "file": "HN_mXWeDsaI-375x250.jpg",
+                "width": 375,
+                "height": 250,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-375x250.jpg"
+              },
+              "thumb_4_colunas": {
+                "file": "HN_mXWeDsaI-255x142.jpg",
+                "width": 255,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-255x142.jpg"
+              },
+              "thumb_3_colunas": {
+                "file": "HN_mXWeDsaI-348x142.jpg",
+                "width": 348,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-348x142.jpg"
+              },
+              "thumb_programa": {
+                "file": "HN_mXWeDsaI-348x164.jpg",
+                "width": 348,
+                "height": 164,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI-348x164.jpg"
+              },
+              "full": {
+                "file": "HN_mXWeDsaI.jpg",
+                "width": 1280,
+                "height": 720,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI.jpg"
+              }
+            },
+            "image_meta": {
+              "aperture": "0",
+              "credit": "",
+              "camera": "",
+              "caption": "",
+              "created_timestamp": "0",
+              "copyright": "",
+              "focal_length": "0",
+              "iso": "0",
+              "shutter_speed": "0",
+              "title": "",
+              "orientation": "0",
+              "keywords": []
+            }
+          },
+          "source_url": "https://static.ricmais.com.br/uploads/2022/05/HN_mXWeDsaI.jpg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969853"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969853"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 1,
+            "link": "https://ricmais.com.br/noticias/",
+            "name": "Notícias",
+            "slug": "noticias",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories/1"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?categories=1"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 51212,
+            "link": "https://ricmais.com.br/tag/video/",
+            "name": "Vídeo",
+            "slug": "video",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags/51212"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?tags=51212"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 1969848,
+    "date": "2022-05-16T17:54:02",
+    "date_gmt": "2022-05-16T20:54:02",
+    "guid": {
+      "rendered": "https://ricmais.com.br/noticias/cidade-alerta-londrina-ao-vivo-16-05-2022/"
+    },
+    "modified": "2022-05-16T18:00:37",
+    "modified_gmt": "2022-05-16T21:00:37",
+    "slug": "cidade-alerta-londrina-ao-vivo-16-05-2022",
+    "status": "publish",
+    "type": "post",
+    "link": "https://ricmais.com.br/noticias/cidade-alerta-londrina-ao-vivo-16-05-2022/",
+    "title": {
+      "rendered": "Cidade Alerta Londrina Ao Vivo | 16/05/2022"
+    },
+    "content": {
+      "rendered": "<div class=\"youtube-responsive-container\"><iframe loading=\"lazy\" width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/TNUOEHV8VYI\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>\n<p>Cidade Alerta Londrina Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Cidade Alerta Londrina Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "author": 233,
+    "featured_media": 1969849,
+    "comment_status": "closed",
+    "ping_status": "",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [
+      1
+    ],
+    "tags": [
+      52061,
+      51212
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969848"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969848"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 0,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969848/revisions"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969849"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media?parent=1969848"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/categories?post=1969848"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/tags?post=1969848"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 233,
+          "name": "Redação RIC Mais",
+          "url": "",
+          "description": "",
+          "link": "https://ricmais.com.br/autor/redacao/",
+          "slug": "redacao",
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "id": 1969849,
+          "date": "2022-05-16T00:00:00",
+          "slug": "tnuoehv8vyi",
+          "type": "attachment",
+          "link": "https://ricmais.com.br/noticias/cidade-alerta-londrina-ao-vivo-16-05-2022/attachment/tnuoehv8vyi/",
+          "title": {
+            "rendered": "TNUOEHV8VYI"
+          },
+          "author": 0,
+          "caption": {
+            "rendered": ""
+          },
+          "alt_text": "",
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "media_details": {
+            "width": 1280,
+            "height": 720,
+            "file": "2022/05/TNUOEHV8VYI.jpg",
+            "sizes": {
+              "medium": {
+                "file": "TNUOEHV8VYI-480x270.jpg",
+                "width": 480,
+                "height": 270,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-480x270.jpg"
+              },
+              "large": {
+                "file": "TNUOEHV8VYI-1067x600.jpg",
+                "width": 1067,
+                "height": 600,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-1067x600.jpg"
+              },
+              "thumbnail": {
+                "file": "TNUOEHV8VYI-150x150.jpg",
+                "width": 150,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-150x150.jpg"
+              },
+              "medium_large": {
+                "file": "TNUOEHV8VYI-768x432.jpg",
+                "width": 768,
+                "height": 432,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-768x432.jpg"
+              },
+              "thumb_capa_small": {
+                "file": "TNUOEHV8VYI-375x250.jpg",
+                "width": 375,
+                "height": 250,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-375x250.jpg"
+              },
+              "thumb_4_colunas": {
+                "file": "TNUOEHV8VYI-255x142.jpg",
+                "width": 255,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-255x142.jpg"
+              },
+              "thumb_3_colunas": {
+                "file": "TNUOEHV8VYI-348x142.jpg",
+                "width": 348,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-348x142.jpg"
+              },
+              "thumb_programa": {
+                "file": "TNUOEHV8VYI-348x164.jpg",
+                "width": 348,
+                "height": 164,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI-348x164.jpg"
+              },
+              "full": {
+                "file": "TNUOEHV8VYI.jpg",
+                "width": 1280,
+                "height": 720,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI.jpg"
+              }
+            },
+            "image_meta": {
+              "aperture": "0",
+              "credit": "",
+              "camera": "",
+              "caption": "",
+              "created_timestamp": "0",
+              "copyright": "",
+              "focal_length": "0",
+              "iso": "0",
+              "shutter_speed": "0",
+              "title": "",
+              "orientation": "0",
+              "keywords": []
+            }
+          },
+          "source_url": "https://static.ricmais.com.br/uploads/2022/05/TNUOEHV8VYI.jpg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969849"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969849"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 1,
+            "link": "https://ricmais.com.br/noticias/",
+            "name": "Notícias",
+            "slug": "noticias",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories/1"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?categories=1"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 51212,
+            "link": "https://ricmais.com.br/tag/video/",
+            "name": "Vídeo",
+            "slug": "video",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags/51212"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?tags=51212"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 1969850,
+    "date": "2022-05-16T17:50:03",
+    "date_gmt": "2022-05-16T20:50:03",
+    "guid": {
+      "rendered": "https://ricmais.com.br/noticias/cidade-alerta-oeste-ao-vivo-16-05-2022/"
+    },
+    "modified": "2022-05-16T18:00:51",
+    "modified_gmt": "2022-05-16T21:00:51",
+    "slug": "cidade-alerta-oeste-ao-vivo-16-05-2022",
+    "status": "publish",
+    "type": "post",
+    "link": "https://ricmais.com.br/noticias/cidade-alerta-oeste-ao-vivo-16-05-2022/",
+    "title": {
+      "rendered": "Cidade Alerta Oeste Ao Vivo | 16/05/2022"
+    },
+    "content": {
+      "rendered": "<div class=\"youtube-responsive-container\"><iframe loading=\"lazy\" width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/rR-1TOX6sqM\" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>\n<p>Cidade Alerta Oeste Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Cidade Alerta Oeste Ao Vivo | 16/05/2022</p>\n",
+      "protected": false
+    },
+    "author": 233,
+    "featured_media": 1969851,
+    "comment_status": "closed",
+    "ping_status": "",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [
+      1
+    ],
+    "tags": [
+      51212
+    ],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969850"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969850"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 0,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/posts/1969850/revisions"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969851"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://ricmais.com.br/wp-json/wp/v2/media?parent=1969850"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/categories?post=1969850"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://ricmais.com.br/wp-json/wp/v2/tags?post=1969850"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 233,
+          "name": "Redação RIC Mais",
+          "url": "",
+          "description": "",
+          "link": "https://ricmais.com.br/autor/redacao/",
+          "slug": "redacao",
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/2dc10d0b11d1c7ef917118536b9ffa58?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users/233"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "id": 1969851,
+          "date": "2022-05-16T00:00:00",
+          "slug": "rr-1tox6sqm",
+          "type": "attachment",
+          "link": "https://ricmais.com.br/noticias/cidade-alerta-oeste-ao-vivo-16-05-2022/attachment/rr-1tox6sqm/",
+          "title": {
+            "rendered": "rR-1TOX6sqM"
+          },
+          "author": 0,
+          "caption": {
+            "rendered": ""
+          },
+          "alt_text": "",
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "media_details": {
+            "width": 1280,
+            "height": 720,
+            "file": "2022/05/rR-1TOX6sqM.jpg",
+            "sizes": {
+              "medium": {
+                "file": "rR-1TOX6sqM-480x270.jpg",
+                "width": 480,
+                "height": 270,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-480x270.jpg"
+              },
+              "large": {
+                "file": "rR-1TOX6sqM-1067x600.jpg",
+                "width": 1067,
+                "height": 600,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-1067x600.jpg"
+              },
+              "thumbnail": {
+                "file": "rR-1TOX6sqM-150x150.jpg",
+                "width": 150,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-150x150.jpg"
+              },
+              "medium_large": {
+                "file": "rR-1TOX6sqM-768x432.jpg",
+                "width": 768,
+                "height": 432,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-768x432.jpg"
+              },
+              "thumb_capa_small": {
+                "file": "rR-1TOX6sqM-375x250.jpg",
+                "width": 375,
+                "height": 250,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-375x250.jpg"
+              },
+              "thumb_4_colunas": {
+                "file": "rR-1TOX6sqM-255x142.jpg",
+                "width": 255,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-255x142.jpg"
+              },
+              "thumb_3_colunas": {
+                "file": "rR-1TOX6sqM-348x142.jpg",
+                "width": 348,
+                "height": 142,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-348x142.jpg"
+              },
+              "thumb_programa": {
+                "file": "rR-1TOX6sqM-348x164.jpg",
+                "width": 348,
+                "height": 164,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM-348x164.jpg"
+              },
+              "full": {
+                "file": "rR-1TOX6sqM.jpg",
+                "width": 1280,
+                "height": 720,
+                "mime_type": "image/jpeg",
+                "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM.jpg"
+              }
+            },
+            "image_meta": {
+              "aperture": "0",
+              "credit": "",
+              "camera": "",
+              "caption": "",
+              "created_timestamp": "0",
+              "copyright": "",
+              "focal_length": "0",
+              "iso": "0",
+              "shutter_speed": "0",
+              "title": "",
+              "orientation": "0",
+              "keywords": []
+            }
+          },
+          "source_url": "https://static.ricmais.com.br/uploads/2022/05/rR-1TOX6sqM.jpg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media/1969851"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/media"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://ricmais.com.br/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://ricmais.com.br/wp-json/wp/v2/comments?post=1969851"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 1,
+            "link": "https://ricmais.com.br/noticias/",
+            "name": "Notícias",
+            "slug": "noticias",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories/1"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?categories=1"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 51212,
+            "link": "https://ricmais.com.br/tag/video/",
+            "name": "Vídeo",
+            "slug": "video",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags/51212"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://ricmais.com.br/wp-json/wp/v2/posts?tags=51212"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  }
+]
