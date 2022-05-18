@@ -4,8 +4,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart';
-import 'package:ndmais/model/post.dart';
-import 'package:ndmais/view/videoPlayer.dart';
+import 'package:intl/intl.dart';
+import 'package:ricmais/model/post.dart';
+import 'package:ricmais/view/videoPlayer.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
 
 class MyContentPage extends StatefulWidget {
   MyContentPage({Key? key, required this.post}) : super(key: key);
@@ -34,7 +37,13 @@ class _MyHomePageState extends State<MyContentPage> {
     // widgets.add(mainImageWidget());
 
     return Scaffold(
-      appBar: AppBar(title: Text(post.title)),
+      appBar: AppBar(
+          elevation: 5,
+          shadowColor: Colors.lightBlue,
+          centerTitle: true,
+          backgroundColor:  Color.fromRGBO(3, 45, 90, 1),
+          title: Text(post.category.toUpperCase())),
+
       body: Container(
           child: SingleChildScrollView(
         child: Column(children: widgets),
@@ -48,7 +57,7 @@ class _MyHomePageState extends State<MyContentPage> {
       padding: const EdgeInsets.all(8.0),
       child: Center(
         child: Text(
-          post.date.toString(),
+          DateFormat("dd/MM/yyyy 'às' HH:mm").format(post.date),
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 16,
@@ -79,9 +88,11 @@ class _MyHomePageState extends State<MyContentPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: Text(post.title,
+                child: Text(
+                    post.title,
                     style: TextStyle(
                         // backgroundColor: Colors.black.withOpacity(0.5),
+                      fontFamily: 'Ample',
                         fontSize: 22,
                         color: isImageValid ? Colors.white : Colors.black,
                         shadows: [
@@ -95,21 +106,21 @@ class _MyHomePageState extends State<MyContentPage> {
                         ])),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                getText(post.excerpt),
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  // backgroundColor: Colors.black.withOpacity(0.5),
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                  fontFamily: 'RobotoMono',
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            )
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Text(
+            //     getText(post.excerpt),
+            //     textAlign: TextAlign.left,
+            //     style: TextStyle(
+            //       // backgroundColor: Colors.black.withOpacity(0.5),
+            //       fontSize: 16,
+            //       color: Colors.white,
+            //       fontWeight: FontWeight.w300,
+            //       fontFamily: 'RobotoMono',
+            //       fontStyle: FontStyle.italic,
+            //     ),
+            //   ),
+            // )
           ],
         )
       ],
@@ -136,13 +147,25 @@ class _MyHomePageState extends State<MyContentPage> {
   void getVideoElement(dom.Element element, List<Widget> widgets) async {
     if (element.localName == 'div') {
       var nameClass = element.attributes['class'];
-      if (nameClass == 'ndmais-content-video') {
-        var videoSource = element.getElementsByTagName('source').elementAt(0).attributes['src'].toString();
-        var videoCaption = element.getElementsByClassName('ndmais-content-video-caption').elementAt(0).text;
+      if (nameClass == 'youtube-responsive-container') {
+        var videoSource = element.getElementsByTagName('iframe').elementAt(0).attributes['src'].toString().split('embed/')[1];
 
-        widgets.add(new VideoApp(url: videoSource, caption: videoCaption));
+        YoutubePlayerController _controller = YoutubePlayerController(
+          initialVideoId: videoSource,
+          params: YoutubePlayerParams(
+            playlist: [videoSource], // Defining custom playlist
+            startAt: Duration(seconds: 30),
+            showControls: true,
+            showFullscreenButton: true,
+          ),
+        );
+
+        widgets.add(YoutubePlayerIFrame(
+          controller: _controller,
+          aspectRatio: 16 / 9,
+        ));
       }
-
+      widgets.add(new Text('teste'));
       element.getElementsByClassName('player-content').forEach((element) {
         widgets.add(
           Text('player-content'),

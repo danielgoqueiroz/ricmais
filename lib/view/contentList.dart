@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
-import 'package:ndmais/model/post.dart';
+import 'package:ricmais/model/post.dart';
 import 'contentPage.dart';
 import 'package:logging/logging.dart';
 
@@ -307,7 +307,7 @@ class _DynamicList extends State<ContentList> {
           backgroundColor: getCategoryColorBackground(category),
           fontSize: 16,
           color: getCategoryColor(category),
-          fontFamily: "Roboto",
+          fontFamily: 'HurmeFIN1a',
           fontWeight: FontWeight.bold),
     );
   }

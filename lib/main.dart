@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ndmais/view/videoPlayer.dart';
+import 'package:ricmais/view/videoPlayer.dart';
 
 import 'view/home.dart';
 
@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate
       ],
       supportedLocales: [const Locale('en', '')],
-      title: 'Ndmais',
+      title: 'RicMais',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'NewsD+'),
+      home: MyHomePage(title: 'RicMais'),
     );
   }
 }
